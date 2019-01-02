@@ -1,4 +1,4 @@
-# Get-Around
+# Rent-A-Vehicle
 Users can rent vehicles from other people
 
 # Group Members & Work Breakdown
