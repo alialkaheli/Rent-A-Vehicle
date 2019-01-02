@@ -1,7 +1,7 @@
 # Get-Around
 Users can rent vehicles from other people
 
-#Group Members & Work Breakdown
+# Group Members & Work Breakdown
 **Ali Alkaheli, Jon Ortiz, Savio Rodrigues**
 
 #Day 1
