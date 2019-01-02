@@ -1,13 +1,24 @@
 # Rent-A-Vehicle
-Users can rent vehicles from other people
+Users can rent vehicles from other local users
+
 # Background and Overview
 Web application where locals can post for rent any sort of private transportation method from bicycles, segways, hoverboards, motorcycle, cars, trucks etc. Application similar to AirBnB and Turo where users can search for vehicles up for rent, or can post vehicle need in close proximity to their current location. 
-* Functionality and MVP
-  * User authorization: sign up and log in
-  * CRUD Post (2 day) Owners will be able to create/update/delete vehicles they are offering 
-  * Users will be able to view all and search for vehicles
-  * Users will be able to reserve a certain vehicle if available 
 
+* Functionality and MVP
+  * User authentication: sign up and log in
+  * Post/Rental CRUD (2 day):
+    * Owners will be able to create/update/delete vehicles they are offering 
+    * Users will be able to view and search for all available vehicles
+    * Users will be able to reserve a certain vehicle if available 
+  * Rent vehicles
+    * Users can request rental
+    * Owners can approve
+    * Should be no rental overlap
+  * Filter Items
+    * Users should be able to filter based on location and vehicle type
+    * User dashboard - shows user information and users rental history
+    * Production ReadME
+    
 * Technologies and Technical Challenges
   * Backend: MongoDB/Express
   * Frontend: React/Node.js
