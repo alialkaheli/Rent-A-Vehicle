@@ -3,16 +3,19 @@ const mongoose = require('mongoose');
 const express = require("express");
 const app = express();
 const db = require('./config/keys').mongoURI;
-const users = require("./routes/api/users");
-const posts = require("./routes/api/posts");
 const bodyParser = require("body-parser");
+const passport = require("passport");
 /////////end ///////
 
-
-app.use("/api/users", users);
+//////////importing routes///////
+const users = require("./routes/api/users");
+const posts = require("./routes/api/posts");
+///////end///////
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(passport.initialize());
+require("./config/passport")(passport);
 
 mongoose
     .connect(db, { useNewUrlParser: true })
@@ -20,6 +23,8 @@ mongoose
     .catch(err => console.log(err));
 
 app.get("/", (req, res) => res.send("Hello World!!"));
+
+app.use("/api/users", users);
 
 
 const port = process.env.PORT || 5000;
