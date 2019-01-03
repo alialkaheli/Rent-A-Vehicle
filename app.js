@@ -9,6 +9,7 @@ const passport = require("passport");
 
 //////////importing routes///////
 const users = require("./routes/api/users");
+const posts = require("./routes/api/posts");
 ///////end///////
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -24,6 +25,7 @@ mongoose
 app.get("/", (req, res) => res.send("Hello World!!"));
 
 app.use("/api/users", users);
+app.use("/api/posts", posts);
 
 
 const port = process.env.PORT || 5000;
