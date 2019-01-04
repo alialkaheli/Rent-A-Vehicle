@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const getPost = () => {
+export const getPosts = () => {
     return axios.get('/api/posts');
 };
 
@@ -10,4 +10,4 @@ export const getUserPosts = id => {
 
 export const writePost = data => {
     return axios.post('/api/posts/', data);
-}
+};
