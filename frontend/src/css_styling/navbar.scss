@@ -1,0 +1,37 @@
+.nav-wrapper {
+    height: 100px;
+    width: 100%;
+    border: 1px solid red;
+    padding: 20px;
+    background: red;
+}
+
+.nav-elements {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-name {
+    font-family: cursive;
+    font-size: 20px;
+    height: 40px;
+    width: 300px;
+    padding-left: 50px;
+}
+
+.auth-buttons {
+    height: 50px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.auth-button-links {
+    padding: 10px;
+    margin: 10px;
+    height: 30px;
+    width: 50px;
+    border: 1px solid black;
+    text-decoration: none;
+    background: white;
+    border-radius: 10px;
+}
