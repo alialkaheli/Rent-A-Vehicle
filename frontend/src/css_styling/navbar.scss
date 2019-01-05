@@ -49,9 +49,10 @@
     justify-content: center; //horizontal
 }
 .auth-button-links:hover{
-    color: red;
-    background-color: black;
+    // color: red;
+    // background-color: black;
     height: 100%;
+    text-decoration: underline overline;
 }
 .buttons{
     display: flex;
