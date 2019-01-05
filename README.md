@@ -1,7 +1,7 @@
 # Rent-A-Vehicle
 Users can rent vehicles from other local users
 
-Live-site: [rent-a-vehicle](https://dashboard.heroku.com/apps/renta-vehicle/deploy/heroku-git)
+Live-site: [rent-a-vehicle](https://renta-vehicle.herokuapp.com/)
 
 # Background and Overview
 Web application where locals can post for rent any sort of private transportation method from bicycles, segways, hoverboards, motorcycle, cars, trucks etc. Application similar to AirBnB and Turo where users can search for vehicles up for rent, or can post vehicle need in close proximity to their current location. 
