@@ -14,6 +14,27 @@ class MainPage extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <div className="splash-info-wrapper">
+                    <div className="splash-info-container">
+                        <div className="splash-info-section">
+                            <div className="first-pic"></div>
+                            <p className="splash-info-text">Request a vehicle</p>
+                        </div>
+
+                        < div className = "splash-info-section" >
+                            <div className="second-pic"></div>
+                            <p className = "splash-info-text"> Get approved < /p>
+                        </div>
+
+                        < div className = "splash-info-section" >
+                            <div className="third-pic"></div>
+                            <p className = "splash-info-text"> Enjoy your ride! < /p>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
         );
     }
