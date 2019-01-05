@@ -26,5 +26,17 @@
 
 .splash-text {
     color: white;
-    
+    display: flex-column;
+}
+
+.splash-text-upper {
+    color: white;
+    font-family: rockwell;
+    text-shadow: 2px 2px black;
+}
+
+.splash-text-lower {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px black;
 }
