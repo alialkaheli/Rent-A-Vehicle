@@ -5,7 +5,8 @@ module.exports = function validateRegisterInput(data) {
   let errors = {};
 
   data.price = validText(data.price) ? data.price : "";
-  data.daterange = validText(data.daterange) ? data.daterange : "";
+  data.startdate = validText(data.startdate) ? data.startdate : "";
+  data.enddate = validText(data.enddate) ? data.enddate : "";
   data.type = validText(data.type) ? data.type : "";
   data.description = validText(data.description) ? data.description : "";
   data.pickup = validText(data.pickup) ? data.pickup: "";
@@ -24,14 +25,15 @@ module.exports = function validateRegisterInput(data) {
     errors.price = "Price field is required";
   }
 
-  ///////daterange
-  if (Validator.isEmpty(data.daterange)) {
-      errors.daterange = "daterange field is required";
+  ///////start and end date
+  if (Validator.isEmpty(data.startdate)) {
+      errors.startdate = "start date field is required";
   }
 
-  if (!Validator.isLength(data.daterange, { min: 2, max: 10 })) {
-    errors.daterange = "Date range must be at least 10 characters";
+  if (Validator.isEmpty(data.enddate)) {
+      errors.enddate = "end sdate field is required";
   }
+
 
   //////type
   if (Validator.isEmpty(data.type)) {

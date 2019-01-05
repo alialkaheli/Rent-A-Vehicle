@@ -49,7 +49,9 @@ router.post('/',
 
         const newPost = new Post({
             price: req.body.price,
-            daterange: req.body.daterange,
+            startdate: req.body.startdate,
+            enddate: req.body.enddate,
+
             type: req.body.type,
             description: req.body.description,
             pickup: req.body.pickup,
