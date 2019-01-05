@@ -29,7 +29,13 @@ class Post extends React.Component {
                     {this.state.posts.map(post => (
                         <PostBox 
                         key={post._id} 
-                        text={post.text} />
+                        type={post.type} 
+                        description={post.description} 
+                        price={post.price} 
+                        pickup={post.pickup} 
+                        startdate={post.startdate} 
+                        enddate={post.enddate} 
+                        />
                     ))}
                 </div>
             );
