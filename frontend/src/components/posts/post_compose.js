@@ -8,7 +8,8 @@ class PostCompose extends React.Component {
       this.state = {
           type: "",
           price: "",
-          daterange: "",
+          startdate: "",
+          enddate: "",
           description: "",
           pickup: "",
           newPost: ""
@@ -66,17 +67,26 @@ class PostCompose extends React.Component {
                         <option value="Boards">Boards</option>
                     </select>
                     <br />
+                    <input type="textarea"
+                        value={this.state.description}
+                        onChange={this.update("description")}
+                        placeholder="Write your description..."
+                    />
+                    <br />
                     <input type="text"
                         value={this.state.price}
                         onChange={this.update("price")}
                         placeholder="Write your price..."
                     />
                     <br />
-                    <input type="textarea"
-                        value={this.state.description}
-                        onChange={this.update("description")}
-                        placeholder="Write your description..."
+                    <input type="text"
+                        value={this.state.pickup}
+                        onChange={this.update("pickup")}
+                        placeholder="Write your pickup location..."
                     />
+                    <br />
+                    <input className="startdate-box" placeholder="Start Date" type="date" value={this.state.startdate} onChange={this.update("startdate")} />
+                    <input className="enddate-box" placeholder="End Date" type="date" value={this.state.enddate} onChange={this.update("enddate")} />
                     <br />
                     <input type="submit" value="Submit" />
                 </div>

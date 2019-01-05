@@ -10,7 +10,11 @@ const PostSchema = new Schema({
     type: String,
     required: true
   },
-  daterange: {
+  startdate: {
+    type: String,
+    required: true
+  },
+  enddate: {
     type: String,
     required: true
   },
