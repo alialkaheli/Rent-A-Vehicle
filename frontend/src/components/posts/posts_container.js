@@ -4,7 +4,7 @@ import Posts from './posts';
 
 const mapStateToProps = (state) => {
     return {
-        posts: Object.values(state.tweets.all)
+        posts: Object.values(state.posts.all)
     };
 };
 

@@ -27,7 +27,15 @@ class Profile extends React.Component {
                 <div>
                     <h2>All of This User's Posts</h2>
                     {this.state.posts.map(post => (
-                        <PostBox key={post._id} text={post.text} />
+                        <PostBox
+                            key={post._id}
+                            type={post.type}
+                            description={post.description}
+                            price={post.price}
+                            pickup={post.pickup}
+                            startdate={post.startdate}
+                            enddate={post.enddate}
+                        />
                     ))}
                 </div>
             );
