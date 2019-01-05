@@ -79,12 +79,14 @@ router.patch(
     }
 
     const newPost = new Post({
-      price: req.body.price,
-      daterange: req.body.daterange,
-      type: req.body.type,
-      description: req.body.description,
-      pickup: req.body.pickup,
-      user: req.user.id
+        price: req.body.price,
+        startdate: req.body.startdate,
+        enddate: req.body.enddate,
+
+        type: req.body.type,
+        description: req.body.description,
+        pickup: req.body.pickup,
+        user: req.user.id
     });
 
     newPost.save().then(post => res.json(post));
