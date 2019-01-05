@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../../css_styling/00reset.scss'
 import '../../css_styling/navbar.scss';
 
 class NavBar extends React.Component {
@@ -26,7 +27,7 @@ class NavBar extends React.Component {
             );
         } else {
             return (
-                <div>
+                <div className="buttons">
                     <Link className="auth-button-links" to={'/signup'}>Signup</Link>
                     <Link className="auth-button-links" to={'/login'}>Login</Link>
                 </div>
@@ -35,20 +36,16 @@ class NavBar extends React.Component {
     }
 
     render() {
-        return (
+        return <div className="nav-header">
             <div className="nav-wrapper">
-                <div className="nav-elements">
-                    <div className="nav-name">
-                        <h1>Rent-A-Vehicle</h1>
-                    </div>
+              <div className="nav-name">
+              <div className="title-pic"></div>
+                Rent-A-Vehicle
+              </div>
 
-                    <div className="auth-buttons">
-                        {this.getLinks()}
-                    </div>
-                    
-                </div>
+              <div className="auth-buttons">{this.getLinks()}</div>
             </div>
-        );
+          </div>;
     }
 }
 
