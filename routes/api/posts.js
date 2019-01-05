@@ -60,5 +60,37 @@ router.post('/',
     }
 );
 
+router.delete("/:user_id/:id",(req, res) => {
+    Post.findById(req.params.id)
+    .then(post => post.remove().then(() => res.json({success: true})))
+        .catch(err => res.status(404).json({ success: false }))
+});
+
+router.patch(
+  "/update/:user_id/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validatePostInput(req.body);
+
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+
+    const newPost = new Post({
+      price: req.body.price,
+      daterange: req.body.daterange,
+      type: req.body.type,
+      description: req.body.description,
+      pickup: req.body.pickup,
+      user: req.user.id
+    });
+
+    newPost.save().then(post => res.json(post));
+  }
+);
+
+
+
+
 module.exports = router;
 
