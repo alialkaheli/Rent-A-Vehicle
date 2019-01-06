@@ -1,0 +1,69 @@
+.signup-page-wrapper {
+    height: 1000px;
+    width: 100%;
+    // border: 1px solid red;
+    display: flex;
+}
+
+.signup-background-img {
+    background-image: url('https://images.unsplash.com/photo-1469217329261-b173b63012f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.signup-form-wrapper {
+    width: 600px;
+    height: 200px;
+    // border: 1px solid black;
+    // transform: translate(10%,50%);
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+}
+
+.signup-form-container {
+    width: 100%;
+    height: 240%;
+    // border: 1px solid yellow;
+    border-radius: 5px;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+}
+
+.signup-text {
+    text-align: center;
+}
+
+.signup-field {
+    width: 450px;
+    height: 35px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.signup-field.input {
+    padding-left: 20px;
+    font-size: 20px;
+
+}
+
+.signup-field.submit {
+    background: rgb(22, 82, 212);
+    height: 45px;
+    width: 475px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.signup-field.submit:hover {
+    background: #093e96;
+}
