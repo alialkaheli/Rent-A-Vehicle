@@ -31,9 +31,15 @@ class MainPage extends React.Component {
                             <div className="third-pic"></div>
                             <p className = "splash-info-text"> Enjoy your ride! < /p>
                         </div>
-
-
                     </div>
+                </div>
+
+                <div className="splash-rental-wrapper">
+                    <div className="splash-rental-text-container">
+                        <h1 className = "splash-rental-text-header" > Get < span className = "text-special" > what < /span> you need, to get <span className="text-special">where</span > you need < /h1>
+                        <h2 className="splash-rental-text-lower">Check out the latest rides</h2>
+                    </div>
+
                 </div>
             </div>
         );
