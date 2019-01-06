@@ -124,7 +124,7 @@
 }
 
 
-////////////// splash vehicles /////////////////////////
+////////////// splash vehicles text  /////////////////////////
 
 .splash-rental-wrapper {
     width: 100%;
@@ -163,4 +163,52 @@
    font-size: 30px;
    font-family: Slack-Tiempos,"Times New Roman",Georgia,serif;
 
+}
+
+///////////// splash rental pics ////////////////////
+.splash-rental-pics-wrapper {
+    width: 90%;
+    height: 220px;
+    // border: 1px solid red;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    // flex-direction: column;
+}
+
+.rental-pic-container {
+    width: 20%;
+    height: 100%;
+    border: 3px solid white;
+}
+
+.rental-img.first {
+    background-image: url('https://images.unsplash.com/photo-1541800658-6599fffd81c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1662&q=80');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.rental-img.second {
+    background-image: url('https://images.unsplash.com/photo-1528629297340-d1d466945dc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2295&q=80');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.rental-img.third {
+    background-image: url('https://images.unsplash.com/photo-1504909595448-91378747b0cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+.rental-img.fourth {
+    background-image: url('https://images.unsplash.com/photo-1531185038189-41815d864f32?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1850&q=80');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 }
