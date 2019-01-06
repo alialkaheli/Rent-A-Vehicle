@@ -40,6 +40,25 @@ class MainPage extends React.Component {
                         <h2 className="splash-rental-text-lower">Check out the latest rides</h2>
                     </div>
 
+                    <div className="splash-rental-pics-wrapper">
+                        <div className="rental-pic-container">
+                            <div className="rental-img first"></div>
+                        </div>
+
+                        <div className="rental-pic-container">
+                            < div className = "rental-img second"></div>
+                        </div>
+
+                        <div className="rental-pic-container">
+                            <div className = "rental-img third"></div>
+                        </div>
+
+                        <div className="rental-pic-container">
+                            <div className = "rental-img fourth"></div>
+                        </div>
+                        
+                    </div>
+
                 </div>
             </div>
         );
