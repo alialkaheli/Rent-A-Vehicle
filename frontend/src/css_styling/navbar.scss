@@ -24,6 +24,16 @@
     align-items: center;
     justify-content: center;
 }
+
+.nav-title-header {
+    text-decoration-line: none;
+    color: black;
+}
+
+.nav-title-header:hover {
+    // text-decoration: underline overline;
+    font-weight: 600;
+}
 .title-pic{
     height: 60px;
     width: 60px;
@@ -64,3 +74,6 @@
     align-items: center;
 
 }
+
+
+
