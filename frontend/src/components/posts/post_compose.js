@@ -78,7 +78,6 @@ class PostCompose extends React.Component {
                         placeholder="Description..."
                     />
                     <br />
-                    {/* <input type="number" min="0.00" max="10000.00" step="0.01" /> */}
                     <input type="number"
                         min="0.00"
                         max="10000.00"
@@ -96,6 +95,10 @@ class PostCompose extends React.Component {
                     <br />
                     <input className="startdate-box" placeholder="Start Date" type="date" value={this.state.startdate} onChange={this.update("startdate")} />
                     <input className="enddate-box" placeholder="End Date" type="date" value={this.state.enddate} onChange={this.update("enddate")} />
+                    <br />
+                    <form action='/api/images' method="post" enctype="multipart/form-data">
+                        <input type='file' name='image' />
+                    </form>
                     <br />
                     <input type="submit" value="Submit" />
                 </div>

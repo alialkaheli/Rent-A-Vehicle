@@ -9,10 +9,15 @@ const path = require("path");
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts");
 
+const multer = require("multer");
+const cloudinary = require("cloudinary");
+const cloudinaryStorage = require("multer-storage-cloudinary");
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
 require("./config/passport")(passport);
+
 
 
 
