@@ -1,0 +1,16 @@
+.login-wrapper {
+    height: 1000px;
+    width: 100%;
+    border: 1px solid red;
+    display: flex;
+}
+
+.login-background-img {
+    background-image: url('https://images.unsplash.com/photo-1421338443270-0dde2463976a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2641&q=80');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
