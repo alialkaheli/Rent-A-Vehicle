@@ -40,7 +40,7 @@ class NavBar extends React.Component {
             <div className="nav-wrapper">
               <div className="nav-name">
               <div className="title-pic"></div>
-                Rent-A-Vehicle
+                <Link className= "nav-title-header" to="/">Rent-A-Vehicle</Link>
               </div>
 
               <div className="auth-buttons">{this.getLinks()}</div>
