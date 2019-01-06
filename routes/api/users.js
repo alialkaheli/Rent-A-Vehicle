@@ -24,7 +24,7 @@ router.get('/current', passport.authenticate('jwt', {
         username: req.user.username,
         email: req.user.email
     });
-})
+});
 
 
 router.post('/register', (req, res) => {
