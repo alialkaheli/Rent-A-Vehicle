@@ -12,6 +12,7 @@ class PostCompose extends React.Component {
           enddate: "",
           description: "",
           pickup: "",
+          photoFile: null
         //   newPost: ""
       };
 
