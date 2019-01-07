@@ -1,5 +1,9 @@
 import React from 'react';
 import PostBox from './post_box';
+import axios from 'axios';
+const cloudinaryUrl = require('../../front_config/cloudinary_keys').cloudinary_url;
+const cloudinaryPreset = require('../../front_config/cloudinary_keys').cloudinary_upload_preset;
+
 
 class PostCompose extends React.Component {
   constructor(props) {
@@ -12,28 +16,22 @@ class PostCompose extends React.Component {
           enddate: "",
           description: "",
           pickup: "",
-          photoFile: null
+          photoFile: ""
         //   newPost: ""
       };
 
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
+      this.fileUploadHandler = this.fileUploadHandler.bind(this);
   } 
 
 //   componentWillReceiveProps(nextProps) {
 //       this.setState({newPost: nextProps.newPost.text});
 //   }
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-
-    //     this.props.action(this.state).then(action => {
-    //         this.props.history.push(`/posts/${action.post.id}`);
-    //     });
-
-    // }
-
-  handleSubmit(e) {
-    e.preventDefault();
+  handleSubmit(data) {
+    // data.preventDefault()
+    debugger
       let post = {
           type: this.state.type,
           price: this.state.price,
@@ -41,17 +39,45 @@ class PostCompose extends React.Component {
           enddate: this.state.enddate,
           description: this.state.description,
           pickup: this.state.pickup,
+          photoFile: data
         //   newPost: "" 
       };
 
-    this.props.composePost(post);
+    this.props.composePost(post); 
   }
 
-//   update() {
-//     return e => this.setState({
-//       text: e.currentTarget.value
-//     });
-//   }
+    // handleFile(e) {
+    //     this.setState({ photoFile: e.currentTarget.files[0] });
+    // }
+
+  fileSelectedHandler(e) {
+    //   console.log("Made it");
+    //   debugger
+      e.preventDefault();
+      return e => this.setState({
+        photoFile: e.target.files[0]
+    });
+  }
+
+    fileUploadHandler(e) {
+        e.preventDefault();
+        // let file = e.currentTarget.value;
+        let formData = new FormData();
+        formData.append("image", this.state.photoFile);
+        formData.append("upload_preset", cloudinaryPreset);
+        
+
+        axios({
+            url: cloudinaryUrl,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            data: formData
+        })
+        .then( (data) => {this.handleSubmit(data)})
+        .catch();
+    }
 
     update(property) {
         return e => this.setState({
@@ -62,7 +88,7 @@ class PostCompose extends React.Component {
   render() {
     return (
         <div>
-            <form onSubmit={this.handleSubmit}>
+            <form action='/api/images' method="post" encType="multipart/form-data" onSubmit={this.fileUploadHandler}>
                 <div>
                     <select className="drop-down-vehicle" value={this.state.type} onChange={this.update("type")}>
                         <option value='' disabled selected >SELECT TYPE</option>
@@ -96,14 +122,17 @@ class PostCompose extends React.Component {
                     <br />
                     <input className="startdate-box" placeholder="Start Date" type="date" value={this.state.startdate} onChange={this.update("startdate")} />
                     <input className="enddate-box" placeholder="End Date" type="date" value={this.state.enddate} onChange={this.update("enddate")} />
+                    
                     <br />
-                    <form action='/api/images' method="post" enctype="multipart/form-data">
-                        <input type='file' name='image' />
-                    </form>
-                    <br />
-                    <input type="submit" value="Submit" />
+                    {/* <input type="submit" value="Submit" /> */}
+                    <input type='file' name='post-image' onChange={this.fileSelectedHandler} />
+                    <button onClick={this.fileUploadHandler}>Submit</button>
                 </div>
             </form>
+            <br />
+            {/* <form action='/api/images' method="post" encType="multipart/form-data">
+                <input type='file' name='post-image' onChange={this.fileSelectedHandler} />
+            </form> */}
             <br />
             <PostBox text={this.state.newPost} />
         </div>
