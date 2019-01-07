@@ -82,11 +82,11 @@ router.patch(
         price: req.body.price,
         startdate: req.body.startdate,
         enddate: req.body.enddate,
-
         type: req.body.type,
         description: req.body.description,
         pickup: req.body.pickup,
-        user: req.user.id
+        user: req.user.id,
+        photoFile: req.body.photoFile
     });
 
     newPost.save().then(post => res.json(post));

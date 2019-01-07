@@ -36,6 +36,9 @@ const PostSchema = new Schema({
   },
   photoFile: {
     type: String
+  },
+  photoUrl: {
+    type: String
   }
 });
 

@@ -13,6 +13,10 @@ const multer = require("multer");
 const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
 
+const cloudName = require('./config/keys').cloudName;
+const apiKey = require('./config/keys').apiKey;
+const apiSecret = require('./config/keys').apiSecret;
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
@@ -22,6 +26,23 @@ mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
+
+cloudinary.config({
+    // cloud_name: cloudName,
+    // api_key: apiKey,
+    // api_secret: apiSecret
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
+});
+
+const storage = cloudinaryStorage({
+    cloudinary: cloudinary,
+    folder: "demo",
+    allowedFormats: ["jpg", "png"],
+    transformation: [{ width: 500, height: 500, crop: "limit" }]
+});
+const parser = multer({ storage: storage });
 
 // app.get("/", (req, res) => res.send("Hello World!!"));
 
