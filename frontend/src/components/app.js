@@ -9,6 +9,7 @@ import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import ProfileContainer from './profile/profile_container';
+import SearchContainer from './search/search_container';
 
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
             <ProtectedRoute exact path="/posts" component={PostsContainer} />
+            <ProtectedRoute exact path="/search" component={SearchContainer} />
             <ProtectedRoute exact path="/profile" component={ProfileContainer} />
             <ProtectedRoute exact path="/new_post" component={PostComposeContainer} />
         </Switch>
