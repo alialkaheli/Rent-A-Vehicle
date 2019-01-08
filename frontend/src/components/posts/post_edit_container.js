@@ -27,7 +27,6 @@ const mdp = (dispatch) => {
         fetchPost: id => dispatch(fetchPost(id)),
         fetchUserPosts: id => dispatch(fetchUserPosts(id)),
         action: event => {
-            // debugger;
            return dispatch(editPost(event))
         }
     })

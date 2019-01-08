@@ -8,7 +8,7 @@ import {
 
 const PostsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
     Object.freeze(state);
-    // debugger;
+
     let newState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_POSTS:

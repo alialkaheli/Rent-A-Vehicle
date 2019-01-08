@@ -9,13 +9,18 @@ const path = require("path");
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts");
 
+
 const multer = require("multer");
 const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
 
-const cloudName = require('./config/keys').cloudName;
-const apiKey = require('./config/keys').apiKey;
-const apiSecret = require('./config/keys').apiSecret;
+
+// app.use(multer);
+
+
+// const cloudName = require('./config/keys').cloudName;
+// const apiKey = require('./config/keys').apiKey;
+// const apiSecret = require('./config/keys').apiSecret;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -44,7 +49,6 @@ const storage = cloudinaryStorage({
 });
 const parser = multer({ storage: storage });
 
-// app.get("/", (req, res) => res.send("Hello World!!"));
 
 app.use("/api/users", users);
 app.use("/api/posts", posts);

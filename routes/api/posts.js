@@ -2,12 +2,24 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const passport = require("passport");
-
+const fileUpload = require("express-fileupload");
 const Post = require("../../models/Post");
+
+const multer = require("multer");
+const cloudinary = require("cloudinary");
+const cloudinaryStorage = require("multer-storage-cloudinary");
 
 // import validation for posting a post
 const validatePostInput = require("../../validation/post");
 
+router.use(fileUpload());
+
+
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
+});
 
 
 ///index page
@@ -63,10 +75,17 @@ router.post('/',
     }
 );
 
+router.post('/addimage', (req, res) => {
+    cloudinary.uploader.upload(req.files[0].data, (result) => {
+        res.send(result);
+    });
+
+});
+
 router.delete("/:id",(req, res) => {
     Post.findById(req.params.id)
     .then(post => post.remove().then(() => res.json({success: true})))
-        .catch(err => res.status(404).json({ success: false }))
+        .catch(err => res.status(404).json({ success: false }));
 });
 
 router.patch(
@@ -74,7 +93,7 @@ router.patch(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
       const { errors, isValid } = validatePostInput(req.body);
-      debugger;
+    //   debugger;
 
       if (!isValid) {
           return res.status(400).json(errors);
