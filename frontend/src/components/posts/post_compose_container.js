@@ -1,17 +1,25 @@
 import { connect } from 'react-redux';
-import { composePost } from '../../actions/post_actions';
+import { composePost, fetchPost } from "../../actions/post_actions";
 import PostCompose from './post_compose';
 
 const mapStateToProps = (state) => {
+    let post = {
+        type: "",
+        price: "",
+        startdate: "",
+        enddate: "",
+        description: "",
+        pickup: "" };
     return {
         currentUser: state.session.user,
-        newPost: state.posts.new
+        post: post
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        composePost: data => dispatch(composePost(data))
+        fetchPost: id => dispatch(fetchPost(id)),
+        action: data => dispatch(composePost(data))
     };
 };
 

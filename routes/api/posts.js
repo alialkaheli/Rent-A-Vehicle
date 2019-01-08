@@ -55,41 +55,62 @@ router.post('/',
             type: req.body.type,
             description: req.body.description,
             pickup: req.body.pickup,
-            user: req.user.id
+            user: req.user.id,
+            photoFile: req.body.photoFile
         });
 
         newPost.save().then(post => res.json(post));
     }
 );
 
-router.delete("/:user_id/:id",(req, res) => {
+router.delete("/:id",(req, res) => {
     Post.findById(req.params.id)
     .then(post => post.remove().then(() => res.json({success: true})))
         .catch(err => res.status(404).json({ success: false }))
 });
 
 router.patch(
-  "/update/:user_id/:id",
+  "/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const { errors, isValid } = validatePostInput(req.body);
+      const { errors, isValid } = validatePostInput(req.body);
+      debugger;
 
-    if (!isValid) {
-      return res.status(400).json(errors);
-    }
+      if (!isValid) {
+          return res.status(400).json(errors);
+      }
+    Post.findById(req.params.id)
+    .then(post => {
+        if(post){
+            const {body} = req;
+            Object.assign(post, body);
+            // post = new Post({
+            //     price: req.body.price,
+            //     startdate: req.body.startdate,
+            //     enddate: req.body.enddate,
 
-    const newPost = new Post({
-        price: req.body.price,
-        startdate: req.body.startdate,
-        enddate: req.body.enddate,
-        type: req.body.type,
-        description: req.body.description,
-        pickup: req.body.pickup,
-        user: req.user.id,
-        photoFile: req.body.photoFile
-    });
+            //     type: req.body.type,
+            //     description: req.body.description,
+            //     pickup: req.body.pickup,
+            //     user: req.user.id
+            // });
+            const updatePost = new Post(post)
+            updatePost.save().then(respost => res.json(respost));
+        }
+    })
 
-    newPost.save().then(post => res.json(post));
+    // const post = new Post({
+    //     price: req.body.price,
+    //     startdate: req.body.startdate,
+    //     enddate: req.body.enddate,
+
+    //     type: req.body.type,
+    //     description: req.body.description,
+    //     pickup: req.body.pickup,
+    //     user: req.user.id
+    // });
+
+    
   }
 );
 

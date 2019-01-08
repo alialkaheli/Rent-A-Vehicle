@@ -26,17 +26,14 @@ class Post extends React.Component {
             return (
                 <div>
                     <h2>All Posts</h2>
-                    {this.state.posts.map(post => (
-                        <PostBox 
+                    {this.state.posts.map((post,idx) => {
+                        // console.log(post)
+                        return <PostBox 
                         key={post._id} 
-                        type={post.type} 
-                        description={post.description} 
-                        price={post.price} 
-                        pickup={post.pickup} 
-                        startdate={post.startdate} 
-                        enddate={post.enddate} 
+                        index={idx}
+                        postData={post} 
                         />
-                    ))}
+                    })}
                 </div>
             );
         }
