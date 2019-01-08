@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
 import '../../css_styling/00reset.scss';
 import '../../css_styling/map.scss';
@@ -11,7 +11,7 @@ class PostsMap extends React.Component {
     }
 
     initMap() {
-        let map = new window.google.maps.Map(document.getElementById("map-container"), {
+        this.map = new window.google.maps.Map(document.getElementById("map-container"), {
             center: { lat: 37.7758, lng: -122.435},
             zoom: 13
         });
