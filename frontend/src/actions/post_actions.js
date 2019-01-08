@@ -28,7 +28,7 @@ export const receiveNewPost = post => ({
     post
 });
 export const removePost = id => ({
-    postId: id,
+    postId: id.data,
     type: REMOVE_POST
 })
 
@@ -63,7 +63,7 @@ export const editPost = data => dispatch => (
 
 export const delPost = id => dispatch => (
     deletePost(id)
-        .then(id => dispatch(removePost(id)))
+        .then(resId => dispatch(removePost(resId)))
         .catch(err => console.log(err))
 );
 
