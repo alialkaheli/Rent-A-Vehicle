@@ -1,5 +1,6 @@
 import React from 'react';
 import PostBox from './post_box';
+import "../../css_styling/creating-post.scss";
 
 class PostCompose extends React.Component {
   constructor(props) {
@@ -38,7 +39,13 @@ class PostCompose extends React.Component {
         //   newPost: "" 
       };
 
-    this.props.action(post);
+    // this.props.action(post);
+   
+    this.props.action(post).then(action => {
+      this.props.history.push(`/posts`);
+    }).catch(fail => {
+      console.log(fail)
+    });
   }
 
 //   update() {
@@ -54,11 +61,12 @@ class PostCompose extends React.Component {
     }
 
   render() {
-    return <div>
+    return <div className="create-post-page">
         <form onSubmit={this.handleSubmit}>
-          <div>
-            <input type="textarea" value={this.state.description} onChange={this.update("description")} placeholder="Description..." />
-            <br />
+          <div className="create-post-form">
+            
+          <h5 className="title-post">{this.props.formType}</h5>
+          
             <select className="drop-down-vehicle" value={this.state.type} onChange={this.update("type")}>
               <option value="" disabled selected>
                 SELECT TYPE
@@ -71,14 +79,18 @@ class PostCompose extends React.Component {
             </select>
             <br />
             {/* <input type="number" min="0.00" max="10000.00" step="0.01" /> */}
-            <input type="number" min="0.00" max="10000.00" value={this.state.price} onChange={this.update("price")} placeholder="Price..." />
+          <input className="input-box" type="number" min="0.00" max="10000.00" value={this.state.price} onChange={this.update("price")} placeholder="Price..." />
             <br />
-            <input type="text" value={this.state.pickup} onChange={this.update("pickup")} placeholder="Pickup location..." />
+          <h4>Start Date: </h4><input className="date" placeholder="Start Date" type="date" value={this.state.startdate} onChange={this.update("startdate")} />
+          <br />
+          <h4>End Date: </h4><input className="date" placeholder="End Date" type="date" value={this.state.enddate} onChange={this.update("enddate")} />
+          <br />
+          <input className="input-box" type="text" value={this.state.pickup} onChange={this.update("pickup")} placeholder="Pickup location..." />
             <br />
-            <input className="startdate-box" placeholder="Start Date" type="date" value={this.state.startdate} onChange={this.update("startdate")} />
-            <input className="enddate-box" placeholder="End Date" type="date" value={this.state.enddate} onChange={this.update("enddate")} />
-            <br />
-            <input type="submit" value="Submit" />
+            
+          <textarea className="input-textarea" value={this.state.description} onChange={this.update("description")} placeholder="Description..." />
+          <br />
+            <input className="post-submit" type="submit" value="Submit" />
           </div>
         </form>
         <br />

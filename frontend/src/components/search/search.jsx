@@ -8,8 +8,8 @@ import '../../css_styling/search.scss';
 //deconstruct props
 const Search = ({posts, fetchPosts}) => (
     <div className="search-containers">
-        <PostsMap posts={posts} fetchPosts={fetchPosts}/>
-        <Posts posts={posts} fetchPosts={fetchPosts}/>
+        <div className="map"> <PostsMap posts={posts}/></div>
+        <div className="post-section"><Posts posts={posts} fetchPosts={fetchPosts}/></div>
     </div>
 )
 

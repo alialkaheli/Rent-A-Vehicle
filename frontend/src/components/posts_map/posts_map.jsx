@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import '../../css_styling/00reset.scss';
 import '../../css_styling/map.scss';
 import MarkerManager from '../../util/marker_manager';
+import '../../css_styling/search.scss';
 
 
 class PostsMap extends React.Component {

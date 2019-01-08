@@ -1,0 +1,57 @@
+.create-post-page{
+    width: 100%;
+    height: 700px;
+    border: 1px solid black;
+    display: flex;
+   
+}
+
+.create-post-form{
+    margin-top: 30px;
+    height:300px;
+    width: 500px;
+    // border: 1px solid red;
+    margin-left: 150px;
+
+}
+
+.input-box{
+    height:30px;
+    width: 80%;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.input-textarea{
+    width: 80%;
+    height: 70px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.drop-down-vehicle{
+    height: 30px;
+    width: 150px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    // margin-top: 20px;
+}
+
+.date{
+    height: 30px;
+    width:40%;
+    margin-bottom: 10px;
+    font-size:18px;
+}
+
+.post-submit{
+    width: 80%;
+    height: 50px;
+    font-size: 18px;
+    background-color:rgb(9, 62, 150);
+    color: white;
+}
+
+.title-post{
+    font-size: 25px;
+}
