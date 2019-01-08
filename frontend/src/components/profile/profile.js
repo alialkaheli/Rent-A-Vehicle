@@ -23,22 +23,16 @@ class Profile extends React.Component {
         if (this.state.posts.length === 0) {
             return (<div>This user has no Posts</div>)
         } else {
-            return (
-                <div>
-                    <h2>All of This User's Posts</h2>
-                    {this.state.posts.map(post => (
-                        <PostBox
-                            key={post._id}
-                            type={post.type}
-                            description={post.description}
-                            price={post.price}
-                            pickup={post.pickup}
-                            startdate={post.startdate}
-                            enddate={post.enddate}
-                        />
-                    ))}
-                </div>
-            );
+            return <div>
+                <h2>All of This User's Posts</h2>
+                {this.state.posts.map((post,idx) => (
+                  <PostBox
+                    index={idx}
+                    postData={post}
+                  />
+                ))}
+                
+              </div>;
         }
     }
 }
