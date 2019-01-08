@@ -25,9 +25,10 @@ const App = () => (
         <ProtectedRoute exact path="/search" component={SearchContainer} />
         <ProtectedRoute exact path="/profile" component={ProfileContainer} />
         <ProtectedRoute exact path="/new_post" component={PostComposeContainer} />
-        <ProtectedRoute exact path = "/posts/:id" component = {EditPost }/>
+        <ProtectedRoute exact path="/posts/:id" component={EditPost} />
     </Switch>
-</div>
+    </div>
+      
 );
 
 export default App;
