@@ -22,5 +22,5 @@ export const updatePost = data => {
     ;
 };
 export const deletePost = dataid => {
-    return axios.delete(`/${dataid}`);
+    return axios.delete(`/api/posts/${dataid}`);
 };
