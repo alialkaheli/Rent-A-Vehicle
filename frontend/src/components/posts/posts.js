@@ -24,15 +24,16 @@ class Post extends React.Component {
             return (<div>There are no Posts</div>)
         } else {
             return (
-                <div>
+                <div className="all-post-form">
                     <h2>All Posts</h2>
                     {this.state.posts.map((post,idx) => {
                         // console.log(post)
-                        return <PostBox 
+                        return<div className="all-post"> <PostBox 
                         key={post._id} 
                         index={idx}
                         postData={post} 
                         />
+                        </div>
                     })}
                 </div>
             );

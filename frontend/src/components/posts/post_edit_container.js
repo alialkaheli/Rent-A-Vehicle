@@ -11,11 +11,12 @@ import { withRouter } from 'react-router-dom';
 
 
 const msp = (state, owns) => {
-    debugger;
+    // debugger;
     let currPost = state.posts.user[owns.match.params.id]
     // let currPost = state.posts.user[owns.match.params.id]
     return {
         post: currPost,
+        formType: "Update Post"
         
     };
 
@@ -41,8 +42,8 @@ class EditForm extends React.Component {
         if(this.props.post === null){
             return " "
         }
-        const { action, post } = this.props;
-        return <PostCompose action={action} post={post} />;
+        const { action, post, formType } = this.props;
+        return <PostCompose action={action} post={post} formType={formType}/>;
     }
 }
 

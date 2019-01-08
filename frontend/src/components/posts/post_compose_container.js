@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
         photoFile: "" };
     return {
         currentUser: state.session.user,
-        post: post
+        post: post,
+        formType: "Create a Post"
     };
 };
 

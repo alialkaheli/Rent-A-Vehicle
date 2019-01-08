@@ -71,7 +71,8 @@ router.post('/',
             photoFile: req.body.photoFile
         });
 
-        newPost.save().then(post => res.json(post));
+        newPost.save().then(post => res.json(post))
+            .catch(errors => res.status(400).json(errors));
     }
 );
 
@@ -84,8 +85,8 @@ router.post('/addimage', (req, res) => {
 
 router.delete("/:id",(req, res) => {
     Post.findById(req.params.id)
-    .then(post => post.remove().then(() => res.json({success: true})))
-        .catch(err => res.status(404).json({ success: false }));
+    .then(post => post.remove().then((post) => res.json(post.id)))
+        .catch(err => res.status(404).json({ success: false }))
 });
 
 router.patch(

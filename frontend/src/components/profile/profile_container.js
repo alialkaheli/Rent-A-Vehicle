@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUserPosts } from '../../actions/post_actions';
+import { fetchUserPosts, delPost } from "../../actions/post_actions";
 import Profile from './profile';
 
 const mapStateToProps = (state) => {
@@ -10,9 +10,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-        fetchUserPosts: id => dispatch(fetchUserPosts(id))
-    };
+    return { fetchUserPosts: id => dispatch(fetchUserPosts(id)),
+        delPost: id => dispatch(delPost(id)) };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
