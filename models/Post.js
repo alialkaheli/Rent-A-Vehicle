@@ -33,6 +33,14 @@ const PostSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  photoFile: {
+    type: String,
+    require: true
+  },
+  photoUrl: {
+    type: String,
+    require: true
   }
 });
 

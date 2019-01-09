@@ -11,7 +11,6 @@ import { withRouter } from 'react-router-dom';
 
 
 const msp = (state, owns) => {
-    // debugger;
     let currPost = state.posts.user[owns.match.params.id]
     // let currPost = state.posts.user[owns.match.params.id]
     return {
@@ -28,7 +27,6 @@ const mdp = (dispatch) => {
         fetchPost: id => dispatch(fetchPost(id)),
         fetchUserPosts: id => dispatch(fetchUserPosts(id)),
         action: event => {
-            // debugger;
            return dispatch(editPost(event))
         }
     })

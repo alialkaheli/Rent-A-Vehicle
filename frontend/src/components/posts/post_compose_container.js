@@ -9,7 +9,9 @@ const mapStateToProps = (state) => {
         startdate: "",
         enddate: "",
         description: "",
-        pickup: "" };
+        pickup: "",
+        photoFile: null,
+        photoUrl: "" };
     return {
         currentUser: state.session.user,
         post: post,
