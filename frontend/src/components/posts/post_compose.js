@@ -99,9 +99,8 @@ class PostCompose extends React.Component {
     return <div className="create-post-page">
         <form onSubmit={this.handleSubmit}>
           <div className="create-post-form">
-            
-          <h5 className="title-post">{this.props.formType}</h5>
-          
+            <h5 className="title-post">{this.props.formType}</h5>
+
             <select className="drop-down-vehicle" value={this.state.type} onChange={this.update("type")}>
               <option value="" disabled selected>
                 SELECT TYPE
@@ -113,13 +112,16 @@ class PostCompose extends React.Component {
               <option value="Boards">Boards</option>
             </select>
             <br />
-          <input className="input-box" type="number" min="0.00" max="10000.00" value={this.state.price} onChange={this.update("price")} placeholder="Price..." />
+            {/* <input type="number" min="0.00" max="10000.00" step="0.01" /> */}
+            <input className="input-box" type="number" min="0.00" max="10000.00" value={this.state.price} onChange={this.update("price")} placeholder="Price..." />
             <br />
-          <h4>Start Date: </h4><input className="date" placeholder="Start Date" type="date" value={this.state.startdate} onChange={this.update("startdate")} />
-          <br />
-          <h4>End Date: </h4><input className="date" placeholder="End Date" type="date" value={this.state.enddate} onChange={this.update("enddate")} />
-          <br />
-          <input className="input-box" type="text" value={this.state.pickup} onChange={this.update("pickup")} placeholder="Pickup location..." />
+            <h4>Start Date: </h4>
+            <input className="date" placeholder="Start Date" type="date" value={this.state.startdate} onChange={this.update("startdate")} />
+            <br />
+            <h4>End Date: </h4>
+            <input className="date" placeholder="End Date" type="date" value={this.state.enddate} onChange={this.update("enddate")} />
+            <br />
+            <input className="input-box" type="text" value={this.state.pickup} onChange={this.update("pickup")} placeholder="Pickup location..." />
             <br />
             <br />
             
@@ -135,7 +137,7 @@ class PostCompose extends React.Component {
             <div className="selected-image">Your selected image: </div><div>{this.props.photoFile}</div>
           </div>
 
-          <br />
+            <br />
             <input className="post-submit" type="submit" value="Submit" />
           </div>
         </form>

@@ -7,6 +7,8 @@ class PostBox extends React.Component {
     render() {
         // console.log(this.props.index)
         return <div className="post-info">
+          
+          <div className="specs">
             <div className="top-post">
               <h3>{this.props.postData.type}</h3>
               <h3>{this.props.postData.price}</h3>
@@ -17,10 +19,14 @@ class PostBox extends React.Component {
             </div>
             <h3>{this.props.postData.pickup}</h3>
             <h3>{this.props.postData.description}</h3>
-            <img src={this.props.postData.photoFile}/>
+        </div>
+          <div className="post-pic">
+            <img src={this.props.postData.photoFile} className="veh-image" />
             {/* <h3>{this.props.postData.photoFile}</h3> */}
 
             {/* <Link to={`/posts/${this.props.index}`}>Update</Link> */}
+          </div>
+        
           </div>;
     }
 }
