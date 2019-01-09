@@ -124,18 +124,20 @@ class PostCompose extends React.Component {
             <input className="input-box" type="text" value={this.state.pickup} onChange={this.update("pickup")} placeholder="Pickup location..." />
             <br />
             <br />
-            
-          <textarea className="input-textarea" value={this.state.description} onChange={this.update("description")} placeholder="Description..." />
-          <br />
-          <div className="drop-container">Upload an image:
-            <Dropzone multiple={false}
-                accept='image/*'
-                onDrop={this.onDrop}
-                className='photo-image-dropbox'>
-                <p>Drag and drop an Image</p>
-            </Dropzone>
-            <div className="selected-image">Your selected image: </div><div>{this.props.photoFile}</div>
-          </div>
+            {/* <input type='file' name='image' onChange={this.fileSelectedHandler} /> 
+          <button onClick={this.fileUploadHandler}>Submit image</button> */}
+            <div className="drop-container">
+              Upload an image:
+              <Dropzone multiple={false} accept="image/*" onDrop={this.onDrop} className="photo-image-dropbox">
+                <div className="drag-img">
+                  Drag an image here
+                </div>
+                {/* <p>Drag and drop an Image</p> */}
+                {this.props.photoUrl}
+              </Dropzone>
+              {/* <div className="selected-image">Your selected image: </div> */}
+              <div>{this.props.photoFile}</div>
+            </div>
 
             <br />
             <input className="post-submit" type="submit" value="Submit" />
