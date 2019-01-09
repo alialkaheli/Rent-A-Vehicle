@@ -62,9 +62,6 @@ class PostCompose extends React.Component {
     });
     this.handleImageUpload(files[0]);
   }
-    // handleFile(e) {
-    //     this.setState({ photoFile: e.currentTarget.files[0] });
-    // }
 
   fileSelectedHandler(e) {
       e.preventDefault();
@@ -72,26 +69,6 @@ class PostCompose extends React.Component {
         photoFile: e.target.files[0]
     });
   }
-
-    // fileUploadHandler(e) {
-    //     e.preventDefault();
-    //     // let file = e.currentTarget.value;
-    //     let formData = new FormData();
-    //     formData.append("image", this.state.photoFile);
-    //     formData.append("upload_preset", cloudinary_upload_preset);
-        
-
-    //     axios({
-    //         url: cloudinary_url,
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/x-www-form-urlencoded"
-    //         },
-    //         data: formData
-    //     })
-    //     .then( (data) => {this.state.formType = data})
-    //     .catch();
-    // }
 
   handleImageUpload(file) {
     let upload = request.post(CLOUDINARY_UPLOAD_URL)
@@ -146,21 +123,19 @@ class PostCompose extends React.Component {
             <br />
             <input className="input-box" type="text" value={this.state.pickup} onChange={this.update("pickup")} placeholder="Pickup location..." />
             <br />
-            {/* <input type='file' id='multi' onChange={this.onChange} multiple /> */}
             <br />
-
-            <textarea className="input-textarea" value={this.state.description} onChange={this.update("description")} placeholder="Description..." />
-            <br />
-            {/* <input type='file' name='image' onChange={this.fileSelectedHandler} /> 
-          <button onClick={this.fileUploadHandler}>Submit image</button> */}
-            <div className="drop-container">
-              Upload an image:
-              <Dropzone multiple={false} accept="image/*" onDrop={this.onDrop} className="photo-image-dropbox">
+            
+          <textarea className="input-textarea" value={this.state.description} onChange={this.update("description")} placeholder="Description..." />
+          <br />
+          <div className="drop-container">Upload an image:
+            <Dropzone multiple={false}
+                accept='image/*'
+                onDrop={this.onDrop}
+                className='photo-image-dropbox'>
                 <p>Drag and drop an Image</p>
-              </Dropzone>
-              <div className="selected-image">Your selected image: </div>
-              <div>{this.props.photoFile}</div>
-            </div>
+            </Dropzone>
+            <div className="selected-image">Your selected image: </div><div>{this.props.photoFile}</div>
+          </div>
 
             <br />
             <input className="post-submit" type="submit" value="Submit" />
