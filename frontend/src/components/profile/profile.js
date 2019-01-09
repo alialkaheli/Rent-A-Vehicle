@@ -1,6 +1,7 @@
 import React from 'react';
 import PostBox from '../posts/post_box';
 import { Link } from "react-router-dom";
+import "../../css_styling/post.scss";
 
 class Profile extends React.Component {
     constructor(props) {
@@ -30,12 +31,16 @@ class Profile extends React.Component {
                 {this.state.posts.map((post,idx) => (
                     
                         <div className="user-post">
+                            <div className="veh-spec">
                             <PostBox
                                 index={idx}
                                 postData={post}
                             />
-                            <button onClick={() => this.props.delPost(post._id)}>Delete</button>
-                            <Link to={`/posts/${post._id}`}>Update</Link>
+                            </div>
+                            <div className="buttons">
+                            <button className="delete-button" onClick={() => this.props.delPost(post._id)}>Delete</button>
+                            <Link className="update-link" to={`/posts/${post._id}`}>Update</Link>
+                            </div>
                         </div>
                     
                 ))}

@@ -122,9 +122,8 @@ class PostCompose extends React.Component {
     return <div className="create-post-page">
         <form onSubmit={this.handleSubmit}>
           <div className="create-post-form">
-            
-          <h5 className="title-post">{this.props.formType}</h5>
-          
+            <h5 className="title-post">{this.props.formType}</h5>
+
             <select className="drop-down-vehicle" value={this.state.type} onChange={this.update("type")}>
               <option value="" disabled selected>
                 SELECT TYPE
@@ -137,33 +136,33 @@ class PostCompose extends React.Component {
             </select>
             <br />
             {/* <input type="number" min="0.00" max="10000.00" step="0.01" /> */}
-          <input className="input-box" type="number" min="0.00" max="10000.00" value={this.state.price} onChange={this.update("price")} placeholder="Price..." />
+            <input className="input-box" type="number" min="0.00" max="10000.00" value={this.state.price} onChange={this.update("price")} placeholder="Price..." />
             <br />
-          <h4>Start Date: </h4><input className="date" placeholder="Start Date" type="date" value={this.state.startdate} onChange={this.update("startdate")} />
-          <br />
-          <h4>End Date: </h4><input className="date" placeholder="End Date" type="date" value={this.state.enddate} onChange={this.update("enddate")} />
-          <br />
-          <input className="input-box" type="text" value={this.state.pickup} onChange={this.update("pickup")} placeholder="Pickup location..." />
+            <h4>Start Date: </h4>
+            <input className="date" placeholder="Start Date" type="date" value={this.state.startdate} onChange={this.update("startdate")} />
+            <br />
+            <h4>End Date: </h4>
+            <input className="date" placeholder="End Date" type="date" value={this.state.enddate} onChange={this.update("enddate")} />
+            <br />
+            <input className="input-box" type="text" value={this.state.pickup} onChange={this.update("pickup")} placeholder="Pickup location..." />
             <br />
             {/* <input type='file' id='multi' onChange={this.onChange} multiple /> */}
             <br />
-            
-            
-          <textarea className="input-textarea" value={this.state.description} onChange={this.update("description")} placeholder="Description..." />
-          <br />
-          {/* <input type='file' name='image' onChange={this.fileSelectedHandler} /> 
-          <button onClick={this.fileUploadHandler}>Submit image</button> */}
-          <div className="drop-container">Upload an image:
-            <Dropzone multiple={false}
-                accept='image/*'
-                onDrop={this.onDrop}
-                className='photo-image-dropbox'>
-                <p>Drag and drop an Image</p>
-            </Dropzone>
-            <div className="selected-image">Your selected image: </div><div>{this.props.photoUrl}</div>
-          </div>
 
-          <br />
+            <textarea className="input-textarea" value={this.state.description} onChange={this.update("description")} placeholder="Description..." />
+            <br />
+            {/* <input type='file' name='image' onChange={this.fileSelectedHandler} /> 
+          <button onClick={this.fileUploadHandler}>Submit image</button> */}
+            <div className="drop-container">
+              Upload an image:
+              <Dropzone multiple={false} accept="image/*" onDrop={this.onDrop} className="photo-image-dropbox">
+                <p>Drag and drop an Image</p>
+              </Dropzone>
+              <div className="selected-image">Your selected image: </div>
+              <div>{this.props.photoFile}</div>
+            </div>
+
+            <br />
             <input className="post-submit" type="submit" value="Submit" />
           </div>
         </form>
