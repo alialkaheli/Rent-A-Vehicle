@@ -17,6 +17,8 @@ class PostBox extends React.Component {
             </div>
             <h3>{this.props.postData.pickup}</h3>
             <h3>{this.props.postData.description}</h3>
+            <img src={this.props.postData.photoFile}/>
+            <h3>{this.props.postData.photoFile}</h3>
 
             {/* <Link to={`/posts/${this.props.index}`}>Update</Link> */}
           </div>;

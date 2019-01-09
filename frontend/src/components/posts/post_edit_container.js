@@ -11,7 +11,6 @@ import { withRouter } from 'react-router-dom';
 
 
 const msp = (state, owns) => {
-    // debugger;
     let currPost = state.posts.user[owns.match.params.id]
     // let currPost = state.posts.user[owns.match.params.id]
     return {

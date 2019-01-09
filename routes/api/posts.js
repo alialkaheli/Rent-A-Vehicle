@@ -94,7 +94,6 @@ router.patch(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
       const { errors, isValid } = validatePostInput(req.body);
-    //   debugger;
 
       if (!isValid) {
           return res.status(400).json(errors);
@@ -104,31 +103,10 @@ router.patch(
         if(post){
             const {body} = req;
             Object.assign(post, body);
-            // post = new Post({
-            //     price: req.body.price,
-            //     startdate: req.body.startdate,
-            //     enddate: req.body.enddate,
-
-            //     type: req.body.type,
-            //     description: req.body.description,
-            //     pickup: req.body.pickup,
-            //     user: req.user.id
-            // });
             const updatePost = new Post(post)
             updatePost.save().then(respost => res.json(respost));
         }
-    })
-
-    // const post = new Post({
-    //     price: req.body.price,
-    //     startdate: req.body.startdate,
-    //     enddate: req.body.enddate,
-
-    //     type: req.body.type,
-    //     description: req.body.description,
-    //     pickup: req.body.pickup,
-    //     user: req.user.id
-    // });
+    });
 
     
   }
