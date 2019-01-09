@@ -68,3 +68,25 @@
 .login-field.submit:hover {
     background: #093e96;
 }
+
+.session-submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cccccc;
+    font-size: 20px;
+    text-decoration-line: none;
+    border: 1px solid #cccccc;
+}
+
+.login-field2{
+    background: #cccccc;
+    height: 45px;
+    width: 475px;
+    border-radius: 10px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
