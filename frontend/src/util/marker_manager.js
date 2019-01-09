@@ -27,7 +27,7 @@ export default class MarkerManager {
      }
 
      createMarkerFromPost(post) {
-         post.pickup = "University of California San Francisco";
+        //  post.pickup = "University of California San Francisco";
          Geocode.setApiKey("AIzaSyAPjYkDq0-iiCd6W5-qCw46J-r0EW39L1U");
             let latitude;
             let longitude;
