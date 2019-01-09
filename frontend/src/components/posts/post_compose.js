@@ -62,9 +62,6 @@ class PostCompose extends React.Component {
     });
     this.handleImageUpload(files[0]);
   }
-    // handleFile(e) {
-    //     this.setState({ photoFile: e.currentTarget.files[0] });
-    // }
 
   fileSelectedHandler(e) {
       e.preventDefault();
@@ -72,26 +69,6 @@ class PostCompose extends React.Component {
         photoFile: e.target.files[0]
     });
   }
-
-    // fileUploadHandler(e) {
-    //     e.preventDefault();
-    //     // let file = e.currentTarget.value;
-    //     let formData = new FormData();
-    //     formData.append("image", this.state.photoFile);
-    //     formData.append("upload_preset", cloudinary_upload_preset);
-        
-
-    //     axios({
-    //         url: cloudinary_url,
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/x-www-form-urlencoded"
-    //         },
-    //         data: formData
-    //     })
-    //     .then( (data) => {this.state.formType = data})
-    //     .catch();
-    // }
 
   handleImageUpload(file) {
     let upload = request.post(CLOUDINARY_UPLOAD_URL)
@@ -136,7 +113,6 @@ class PostCompose extends React.Component {
               <option value="Boards">Boards</option>
             </select>
             <br />
-            {/* <input type="number" min="0.00" max="10000.00" step="0.01" /> */}
           <input className="input-box" type="number" min="0.00" max="10000.00" value={this.state.price} onChange={this.update("price")} placeholder="Price..." />
             <br />
           <h4>Start Date: </h4><input className="date" placeholder="Start Date" type="date" value={this.state.startdate} onChange={this.update("startdate")} />
@@ -145,14 +121,10 @@ class PostCompose extends React.Component {
           <br />
           <input className="input-box" type="text" value={this.state.pickup} onChange={this.update("pickup")} placeholder="Pickup location..." />
             <br />
-            {/* <input type='file' id='multi' onChange={this.onChange} multiple /> */}
             <br />
-            
             
           <textarea className="input-textarea" value={this.state.description} onChange={this.update("description")} placeholder="Description..." />
           <br />
-          {/* <input type='file' name='image' onChange={this.fileSelectedHandler} /> 
-          <button onClick={this.fileUploadHandler}>Submit image</button> */}
           <div className="drop-container">Upload an image:
             <Dropzone multiple={false}
                 accept='image/*'
@@ -160,7 +132,7 @@ class PostCompose extends React.Component {
                 className='photo-image-dropbox'>
                 <p>Drag and drop an Image</p>
             </Dropzone>
-            <div className="selected-image">Your selected image: </div><div>{this.props.photoUrl}</div>
+            <div className="selected-image">Your selected image: </div><div>{this.props.photoFile}</div>
           </div>
 
           <br />

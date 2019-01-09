@@ -1,7 +1,8 @@
 .create-post-page{
     width: 100%;
     height: 700px;
-    border: 1px solid black;
+    // height: 110%;
+    // border: 1px solid black;
     display: flex;
    
 }
@@ -54,4 +55,17 @@
 
 .title-post{
     font-size: 25px;
+}
+
+.drop-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+}
+
+.photo-image-dropbox {
+    // border: 1px solid blue;
+}
+.selected-image {
+    // border: 1px solid black;
 }
