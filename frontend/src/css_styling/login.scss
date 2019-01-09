@@ -75,18 +75,18 @@
     justify-content: center;
     background-color: #cccccc;
     font-size: 20px;
-    text-decoration-line: none;
+    // text-decoration-line: none;
     border: 1px solid #cccccc;
+    height:100%;
+    width:95%;
+    margin-left: 12px;
+    border-radius: 7px;
 }
 
 .login-field2{
-    background: #cccccc;
-    height: 45px;
-    width: 475px;
-    border-radius: 10px;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
+    height: 40px;
 }
+.session-submit:hover{
+    background-color:gray;
+}
+
