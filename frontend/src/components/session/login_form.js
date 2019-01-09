@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
+        // e.preventDefault();
 
         let user = {
             email: this.state.email,
@@ -53,40 +53,48 @@ class LoginForm extends React.Component {
         );
     }
 
-    render() {
+    demoLogin() {
+        
         return (
-            <div className="login-page-wrapper">
-                <div className="login-background-img">
+            <input className="session-submit"
+                onClick={() => {
+                    this.setState({
+                        email: "Guest@guest.com",
+                        password: "Guest123"
+                    })
+                    this.handleSubmit()
+                }
+                }
+                type="submit"
+                value="Demo Login"
+            />
+        )
+        
+    }
 
-                    <div className="login-form-wrapper">
-                        <div className="login-form-container">
-                            <h1 className="login-text">Please Sign In</h1>
-                            <form onSubmit={this.handleSubmit}>
-                                <div>
-                                    <input className="login-field input" type="text"
-                                        value={this.state.email}
-                                        onChange={this.update('email')}
-                                        placeholder="Email"
-                                    />
-                                    <br />
-                                    <input className="login-field input" type="password"
-                                        value={this.state.password}
-                                        onChange={this.update('password')}
-                                        placeholder="Password"
-                                    />
-                                    <br />
-                                    <input className="login-field submit" type="submit" value="Submit" />
-                                    {this.renderErrors()}
-                                </div>
-                            </form>
-                        </div>
-
+    render() {
+        return <div className="login-page-wrapper">
+            <div className="login-background-img">
+              <div className="login-form-wrapper">
+                <div className="login-form-container">
+                  <h1 className="login-text">Please Sign In</h1>
+                  <form onSubmit={this.handleSubmit}>
+                    <div>
+                      <input className="login-field input" type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email" />
+                      <br />
+                      <input className="login-field input" type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password" />
+                      <br />
+                      <input className="login-field submit" type="submit" value="Submit" />
+                      {this.renderErrors()}
+                                <div className="login-field2">
+                        {this.demoLogin()}
+                      </div>
                     </div>
-
-
+                  </form>
                 </div>
+              </div>
             </div>
-        );
+          </div>;
     }
 }
 
