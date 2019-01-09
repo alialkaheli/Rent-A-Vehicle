@@ -156,9 +156,13 @@ class PostCompose extends React.Component {
             <div className="drop-container">
               Upload an image:
               <Dropzone multiple={false} accept="image/*" onDrop={this.onDrop} className="photo-image-dropbox">
-                <p>Drag and drop an Image</p>
+                <div className="drag-img">
+                  Drag an image here
+                </div>
+                {/* <p>Drag and drop an Image</p> */}
+                {this.props.photoUrl}
               </Dropzone>
-              <div className="selected-image">Your selected image: </div>
+              {/* <div className="selected-image">Your selected image: </div> */}
               <div>{this.props.photoFile}</div>
             </div>
 
