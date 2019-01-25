@@ -31,8 +31,11 @@
 
 .splash-text-upper {
     color: white;
-    font-family: rockwell;
-    text-shadow: 2px 2px black;
+    font-size: 40px;
+    font-family: cursive;
+    // font-family: rockwell;
+    text-shadow: 2px 2px blue;
+    
 }
 
 .splash-text-lower {
@@ -114,7 +117,8 @@
 
 .splash-info-text {
     font-size: 30px;
-    font-family: papyrus;
+    // font-family: papyrus;
+    font-family: cursive;
     color: white;
     font-weight: 900;
     text-align: center;
@@ -153,15 +157,17 @@
 
 .splash-rental-text-header {
     font-size: 45px;
-    font-family: Slack-Tiempos,"Times New Roman",Georgia,serif;
-    font-weight: 500;
+    // font-family: Slack-Tiempos,"Times New Roman",Georgia,serif;
+    font-family: cursive;
+    font-weight: 600;
     color: #323648;
     // border: 1px solid black;
 }
 
 .splash-rental-text-lower {
    font-size: 30px;
-   font-family: Slack-Tiempos,"Times New Roman",Georgia,serif;
+//    font-family: Slack-Tiempos,"Times New Roman",Georgia,serif;
+    font-family: cursive;
 
 }
 
