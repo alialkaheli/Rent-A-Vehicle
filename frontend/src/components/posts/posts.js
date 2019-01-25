@@ -28,10 +28,11 @@ class Post extends React.Component {
                     <h2>All Posts</h2>
                     {this.state.posts.map((post,idx) => {
                         // console.log(post)
-                        return<div className="all-post"> <PostBox 
-                        key={post._id} 
-                        index={idx}
-                        postData={post} 
+                        return<div className="all-post"> 
+                        <PostBox 
+                            key={post._id} 
+                            index={idx}
+                            postData={post} 
                         />
                         </div>
                     })}
