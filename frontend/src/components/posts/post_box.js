@@ -25,6 +25,7 @@ class PostBox extends React.Component {
         start = this.format(this.props.postData.startdate);
         end = this.format(this.props.postData.enddate);
       }
+     
         return <div className="post-info">
             <div className="specs">
               <h3 className="v-name">Vehicle: {this.props.postData.type}</h3>
@@ -38,7 +39,7 @@ class PostBox extends React.Component {
             <h3 className="spec-sec">{this.props.postData.description}</h3>
             </div>
             <div className="post-pic">
-              <img src={this.props.postData.photoFile} className="veh-image" />
+            <img src={this.props.postData.photoFile} alt="" className="veh-image" />
               {/* <h3>{this.props.postData.photoFile}</h3> */}
 
               {/* <Link to={`/posts/${this.props.index}`}>Update</Link> */}
