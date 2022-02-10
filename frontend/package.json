@@ -6,7 +6,7 @@
     "axios": "^0.18.0",
     "cloudinary-react": "^1.1.0",
     "jwt-decode": "^2.2.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-dropzone": "^4.2.7",
